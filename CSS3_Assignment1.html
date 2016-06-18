@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Learning CSS3: Assignmrnt 1</title>
+
+<style type="text/css">
+	#main{
+			background-image:url("images.jpg"); 
+			
+			height:1200px;
+			width: 800px;
+			position: relative;
+			left:300px;
+			
+		}
+
+		h2{
+
+			color: white;
+		}
+
+			fieldset
+			{
+				margin:2px;
+				padding:1px;
+				border:3px solid blue;
+			}
+
+
+ .trans{
+	
+	padding:8px;
+    margin: 5px;
+    background-color: lightblue; 
+    border: 4px solid ;
+	border-color : white;
+	border-radius:4px;
+    /*opacity: 0.4;*/
+   
+    -webkit-column-count: 2;
+    position: relative;
+}
+
+
+
+.buy_button{
+	background-color: blue; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-left: 350px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+
+.buy_button:active {
+  background-color: blue;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+input[type="text"]
+{
+	position: absolute;
+	right:10px;
+	width:45%;
+	background-color: white;
+	opacity: 1;
+}
+
+  textarea
+      {
+        position: absolute;
+        right: 10px;
+        width:40%;
+        border-radius: 4px;
+        padding:1px;
+        margin:1px;
+        border:1px solid black;
+      }
+
+         #txta
+      {
+        height:120px;
+      }
+       
+
+      @keyframes example
+			{
+				0%   {width: 0%;}
+				10%  {width: 10%;}
+				25%  {width: 25%;}
+			    35%  {width: 35%;}			    
+			    50%  {width: 50%;}
+			    60%  {width: 60%;}
+			    75%  {width: 70%;}
+			    85%  {width: 85%;}
+			    100% {width: 100%;}
+			}
+
+
+	#progress 
+			{
+			    position: relative;
+			    width: 100%;
+			    height: 30px;
+			    background-color: grey;
+			}
+	#bar {
+			    position: absolute;
+			    width: 0%;
+			    height: 100%;
+			    background-color: green;
+			}
+
+
+	.bbar
+			{
+			    animation-name: example;
+			    animation-duration:10s;
+			}
+
+
+   .trans
+      {
+      	transition-property: width;
+      	transition-duration: 1s;
+      	transition-timing-function: ease-in-out;
+      	-webkit-transition-property: width;
+      	-webkit-transition-duration: 1s;
+      	-webkit-transition-timing-function: ease-in-out;
+      	-o-transition-property: width;
+      	-o-transition-duration: 1s;
+      	-o-transition-timing-function: ease-in-out;
+      	-moz-transition-property: width;
+      	-moz-transition-duration: 1s;
+      	-moz-transition-timing-function: ease-in-out;
+      }
+      .trans:focus
+      {
+      	width:75%;
+      }
+
+      	navbar
+			{
+				border:2px solid black;
+				padding:2px;
+				margin:2px;
+				height:20px;
+				width:100%;
+				color:black;
+				background-color: orange;
+				position:fixed;
+				top:0px;
+				z-index: 1;
+				text-align: center;
+			}
+
+</style>
+
+  <script type="text/javascript">
+  	function addtrans(elem)
+  	{
+  		document.getElementById(elem).className="trans";
+  	}
+  	function move()
+			{
+				document.getElementById("bar").className="bbar";
+			}
+			function go()
+			{	
+				setTimeout(function(){alert('Hello!!')},10000);
+			}
+  </script>
+
+
+
+</head>
+<body>
+
+<navbar>
+  	NAVIGATION BAR
+  </navbar>
+
+<div id="main">
+<form method="post">
+<fieldset>
+
+	<h2>Step 1:Your Details</h2>
+				
+					<div class="trans">
+							<br>Name:<input type="text" name="name" placeholder="First and last name here" id="name" onfocus="addtrans('name');"></input><br><br>
+							<br>
+					</div>
+					<div class="trans">
+							<br>Email:<input type="text" name="email" placeholder="example@domain.com" id="email" onfocus="addtrans('email');"></input><br><br>
+							<br>
+					</div>
+					<div class="trans">
+							<br>Phone:<input type="text" name="phone" placeholder="eg: +44750000000" id="phone" onfocus="addtrans('phone');"></input><br><br>
+							<br>
+					</div>
+
+				
+</fieldset>
+
+<br>
+<fieldset>
+
+				<div class="fields">
+				<h2>Step 2:Delivery Address</h2>
+					<div class="trans" id="txta">
+						Address:<textarea rows="5" cols="50" name="address" id="address" onfocus="addtrans('address');"></textarea>
+						<br>
+					</div>
+					<div class="trans">
+							Post Code:<input type="text" id="post" name="post" placeholder="eg: 110078" id="post" onfocus="addtrans('post');"></input><br><br>
+							<br>
+					</div>
+					<div class="trans">
+							Country:<input type="text" name="country" placeholder="eg: India" id="country" onfocus="addtrans('country');"></input><br><br>
+							<br>
+					</div>
+			</div>
+
+</fieldset>
+<br>
+
+<fieldset>
+				<h2>Step 1:Card details </h2>
+				<div class="trans">
+					Card Type <br><br><br><br>
+						<div class="radioo">
+							<input type="radio" value ="agn" name="card" > <img src="visa.jpg" alt="visa_logo" class="radio_image"></img> Visa </input> &nbsp
+							<input type="radio" value ="agn" name="card"> <img src="amex.png" alt="amex_logo" class="radio_image"></img> AmEx</input> &nbsp
+							<input type="radio" value ="agn" name="card"> <img src="mastercard.png" alt="mc_logo" class="radio_image"> </img> Mastercard </input>
+						</div>
+
+					<br>
+				</div>
+				<div class="trans">
+					Card Number <input type="text" name="card_num" id="card_num" onfocus="addtrans('card_num');"> </input><br><br>
+				<br> 
+				</div>
+
+				<div class="trans">
+					Security Code <input type="text" name="security_code" id="security_code" onfocus="addtrans('security_code');"> </input><br><br>
+				<br>
+				</div>
+
+				<div class="trans">
+					Name on card <input type="text" name="card_name" id="card_name" onfocus="addtrans('card_name');"> </input><br><br>
+				<br>
+				</div>
+		</fieldset>
+			
+			<br><br><br><br><button class="buy_button" type="button" value="BUY IT" name="buy" onclick="move();go();"> BUY IT ! </button>
+			 <div id="progress">
+		<div id="bar">
+		</div>
+	</div>
+
+
+</form>
+	
+
+</div>
+
+</body>
+</html>
